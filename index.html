@@ -21,6 +21,11 @@
             --transition: all 0.3s ease;
             --border-color: rgba(255, 255, 255, 0.08);
             --hover-bg: rgba(255, 255, 255, 0.05);
+            
+            /* --- ADDED FOR CONSISTENCY --- */
+            --tag-bg: rgba(255, 255, 255, 0.1);
+            --input-bg: rgba(30, 30, 30, 0.7);
+            --header-bg: rgba(10, 10, 10, 0.98);
         }
 
         * {
@@ -184,7 +189,7 @@
 
         /* Header Styles */
         header {
-            background-color: rgba(10, 10, 10, 0.98);
+            background-color: var(--header-bg);
             backdrop-filter: blur(10px);
             position: fixed;
             width: 100%;
@@ -540,7 +545,7 @@
         }
 
         .coursework-item, .certification-item {
-            background: rgba(255, 255, 255, 0.05);
+            background: var(--hover-bg);
             padding: 15px;
             border-radius: 8px;
             transition: var(--transition);
@@ -548,7 +553,7 @@
         }
 
         .coursework-item:hover, .certification-item:hover {
-            background: rgba(255, 255, 255, 0.1);
+            background: var(--tag-bg);
             transform: translateY(-3px);
         }
 
@@ -597,14 +602,14 @@
             display: flex;
             align-items: center;
             padding: 10px 15px;
-            background: rgba(255, 255, 255, 0.05);
+            background: var(--hover-bg);
             border-radius: 5px;
             transition: var(--transition);
             border: 1px solid var(--border-color);
         }
 
         .skills-list li:hover {
-            background: rgba(255, 255, 255, 0.1);
+            background: var(--tag-bg);
             transform: translateX(5px);
         }
 
@@ -636,6 +641,7 @@
         .tab-btn.active {
             background: var(--accent-color);
             color: var(--text-light);
+            border-color: var(--accent-color);
         }
 
         .tab-btn:hover {
@@ -712,7 +718,7 @@
         }
 
         .project-tags span {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: var(--tag-bg);
             padding: 5px 10px;
             border-radius: 20px;
             font-size: 12px;
@@ -799,7 +805,7 @@
         .form-control {
             width: 100%;
             padding: 12px 15px;
-            background-color: rgba(30, 30, 30, 0.7);
+            background-color: var(--input-bg);
             border: 1px solid var(--border-color);
             border-radius: 5px;
             font-size: 16px;
@@ -950,9 +956,10 @@
                 align-items: center;
             }
             
-            .btn {
+            /* IMPROVED: Use max-width for uniformity without restricting buttons too much */
+            .home-btns .btn {
                 width: 100%;
-                max-width: 280px;
+                max-width: 320px; 
             }
             
             .skills-section,
@@ -989,7 +996,7 @@
             }
             
             section {
-                padding: 60px 0;
+                padding: 90px 0;
                 min-height: auto;
             }
             
@@ -1006,6 +1013,13 @@
             .home-btns .btn {
                 padding: 12px 24px;
                 font-size: 15px;
+            }
+            
+            /* IMPROVED: Reduce social icon size on small screens */
+            .social-link {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
             }
         }
 
@@ -1031,13 +1045,11 @@
     </style>
 </head>
 <body>
-    <!-- Stars Background - COMPLETELY STATIC -->
     <div class="stars-background" id="stars-background"></div>
 
-    <!-- Header -->
     <header>
         <div class="container header-container">
-            <a href="#home" class="logo" id="home-logo">Deepika R</a>
+            <a href="#home" class="logo" id="home-logo">Deepika .R</a>
             <nav>
                 <ul id="nav-menu">
                     <li><a href="#home" class="nav-link active" data-page="home">Home</a></li>
@@ -1053,7 +1065,6 @@
         </div>
     </header>
 
-    <!-- Home Page -->
     <section id="home" class="page-content active">
         <div class="home">
             <div class="container">
@@ -1081,7 +1092,6 @@
         </div>
     </section>
 
-    <!-- About Page -->
     <section id="about" class="page-content">
         <div class="about">
             <div class="container">
@@ -1158,7 +1168,6 @@
         </div>
     </section>
 
-    <!-- Skills Page -->
     <section id="skills" class="page-content">
         <div class="skills">
             <div class="container">
@@ -1218,7 +1227,6 @@
         </div>
     </section>
 
-    <!-- Projects Page -->
     <section id="projects" class="page-content">
         <div class="projects">
             <div class="container">
@@ -1293,7 +1301,6 @@
         </div>
     </section>
 
-    <!-- Contact Page -->
     <section id="contact" class="page-content">
         <div class="contact">
             <div class="container">
@@ -1348,7 +1355,6 @@
         </div>
     </section>
 
-    <!-- Resume Download Modal -->
     <div class="modal-overlay" id="resumeModal">
         <div class="resume-modal">
             <button class="modal-close" id="modalClose">&times;</button>
